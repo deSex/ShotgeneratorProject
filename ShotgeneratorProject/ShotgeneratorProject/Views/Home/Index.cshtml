@@ -1,0 +1,24 @@
+﻿<div class="center-block text-center start-teaser">
+    <img class="logo"/>
+    <h1>Shortgeneratorn</h1>
+    @*<a href="#">Registrera dig här för mer innehåll</a>
+        <a href="#">eller kör igång utan att registrera dig!</a>*@
+
+    <div class="button-layout">
+
+        @Html.ActionLink("Logga in med Facebook", "Index", null, new { @class = "btn btn-default"})
+        @Html.ActionLink("eller fortsätt utan registrering", "Index", "Generator", null, new { @class = "btn btn-default" })
+
+
+
+
+        @*<button class="btn btn-default">
+            Logga in med Facebook
+        </button>
+        <button class="btn btn-default">
+            eller fortsätt utan registrering
+        </button>*@
+    </div>
+</div>
+
+ToDo: lägg in pil med scrolldown

@@ -1,0 +1,68 @@
+﻿
+@font-face {
+    font-family: 'Sansation_Regular';
+    src: url('../Fonts/Sansation_Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Sansation_Regular';
+    color: white;
+    background-image: url("../../static/image/background.jpe");
+}
+
+
+.start-teaser {
+    margin-top: 13em;
+}
+
+    .start-teaser h1 {
+        font-size: 8em;
+        text-shadow: 2px 2px black;
+        font-weight: bold;
+        letter-spacing: -5px;
+        text-transform: uppercase;
+    }
+
+    .default-margin-top {
+        margin-top: 20px;
+    }
+
+
+.button-layout {
+    margin-top: 2em;
+}
+
+    .button-layout .btn {
+        margin: 10px;
+        font-size: 1.2em;
+        background-color: rgb(90, 51, 129);
+        color: white;
+        padding: 35px;
+        border: 0;
+    }
+
+.form-area {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    padding: 3em;
+    padding-bottom: 13em;
+    margin-top: 3em;
+}
+
+    .form-area p {
+        color: black;
+    }
+
+    .stack-top {
+        margin-top: 3em;
+    }
+
+@media(max-width: 360px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .form-area {
+        padding-bottom: 2em;
+    }
+}
