@@ -8,6 +8,11 @@ namespace ShotgeneratorProject.Controllers
 {
     public class GeneratorController : Controller
     {
+      
+        public ActionResult Generator()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();

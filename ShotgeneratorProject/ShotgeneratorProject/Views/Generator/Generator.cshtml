@@ -1,0 +1,79 @@
+﻿<div class="form-area" ng-controller="generatorOptionsController">
+    <div class="col-md-12">
+        <h1 class="text-center">Admininställningar </h1>
+        <p class="text-center">(för att du ska kunna ändra inställningarna under matchens gång)</p>
+    </div>
+    <form>
+        <fieldset class="form-group col-md-6">
+            <label for="exampleInputEmail1">Användarnamn</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Användarnamn">
+        </fieldset>
+        <fieldset class="form-group col-md-6">
+            <label for="exampleInputPassword1">Lösenord</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Lösenord">
+        </fieldset>
+        <div class="row default-margin-top">
+
+        </div>
+
+        <h1 class="text-center">Hur ska shotgeneratorn bete sig?</h1>
+        <fieldset class="form-group col-md-6">
+
+            <label for="exampleSelect1">Intervall</label>
+            <select class="form-control" id="exampleSelect1">
+                <option>10 min</option>
+                <option>20 min</option>
+                <option>30 min</option>
+                <option>40 min</option>
+                <option>50 min</option>
+                <option>1 timme</option>
+            </select>
+        </fieldset>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="mode-option-1">Läge</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="mode-option-1" value="1" checked>
+                        Hardcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </label>
+                 
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="mode-option-2" value="2" checked>
+                        Softcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
+
+                    </label>
+                  
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="mode-option-3" value="3" checked>
+                        Fast Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </label>
+                 
+                </div>
+            </div>
+        </div>
+
+        <h1 class="text-center">Spelare</h1>
+        <fieldset class="form-group col-md-6">
+            <label for="exampleSelect1">Antal spelare</label>
+            <input ng-model="numOfPlayers" type="number" class="form-control" />
+        </fieldset>
+        <fieldset class="form-group col-md-6" ng-repeat="field in fields">
+            <div id="player" class="form-group">
+                <label for="player{{$index + 1}}">Spelare {{$index + 1}}</label>
+                <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn">
+                <input class="form-control" {{$index +1}} type="text" placeholder="Efternamn" />
+            </div>
+        </fieldset>
+
+        <div class="col-md-12">
+
+            <button type="submit" ng-click="receiveUser()" class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
+            @Html.ActionLink("Nu kör vi!", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </form>
+</div>

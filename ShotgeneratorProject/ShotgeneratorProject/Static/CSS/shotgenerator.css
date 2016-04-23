@@ -23,9 +23,9 @@ body {
         text-transform: uppercase;
     }
 
-    .default-margin-top {
-        margin-top: 20px;
-    }
+.default-margin-top {
+    margin-top: 20px;
+}
 
 
 .button-layout {
@@ -53,9 +53,17 @@ body {
         color: black;
     }
 
-    .stack-top {
-        margin-top: 3em;
-    }
+.stack-top {
+    margin-top: 3em;
+}
+
+.user-stats {
+    margin:150px 0;
+}
+
+
+
+
 
 @media(max-width: 360px) {
     h1 {
@@ -65,4 +73,8 @@ body {
     .form-area {
         padding-bottom: 2em;
     }
+    .user-stats {
+    margin:75px 0;
+}
+
 }
