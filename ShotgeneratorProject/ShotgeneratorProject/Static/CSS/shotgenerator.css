@@ -8,6 +8,7 @@ body {
     font-family: 'Sansation_Regular';
     color: white;
     background-image: url("../../static/image/background.jpe");
+    background-repeat:no-repeat;
 }
 
 
