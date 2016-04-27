@@ -19,8 +19,7 @@ namespace DataLayer.Migrations
         {
             IList<User> Users = new List<User>();
 
-            Users.Add(new User("Alexander", "Helsinghof"));
-            Users.Add(new User("Ludvig", "Flemmich"));
+                
 
             foreach (var user in Users)
             {

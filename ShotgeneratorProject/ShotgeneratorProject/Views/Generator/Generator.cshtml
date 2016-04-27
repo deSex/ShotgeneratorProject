@@ -1,16 +1,16 @@
 ﻿<div class="form-area" ng-controller="generatorOptionsController">
     <div class="col-md-12">
-        <h1 class="text-center">Admininställningar </h1>
+        <h1 class="text-center col-xs-12">Admininställningar </h1>
         <p class="text-center">(för att du ska kunna ändra inställningarna under matchens gång)</p>
     </div>
     <form>
         <fieldset class="form-group col-md-6">
             <label for="exampleInputEmail1">Användarnamn</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" ng-model="user.username" placeholder="Användarnamn">
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-required="true"  ng-model="user.username" placeholder="Användarnamn">
         </fieldset>
         <fieldset class="form-group col-md-6">
             <label for="exampleInputPassword1">Lösenord</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" ng-model="user.password" placeholder="Lösenord">
+            <input type="password" class="form-control" ng-required="true" id="exampleInputPassword1" ng-model="user.password" placeholder="Lösenord">
         </fieldset>
         <div class="row default-margin-top">
 
@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <label for="mode-option-1">Läge</label>
                 <fieldset class="form-group">
-                    <div class="radio">
+                    <div class="radio" ng-required="true">
                         <label>
                             <input type="radio" name="optionsRadios" id="mode-option-1" value="1" checked ng-model="user.shotSettings.mode">
                             Hardcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -54,19 +54,19 @@
         <h1 class="text-center">Spelare</h1>
         <fieldset class="form-group col-md-6">
             <label for="exampleSelect1">Antal spelare</label>
-            <input ng-model="numOfPlayers" type="number" class="form-control" />
+            <input ng-model="playerQuantity" type="number" class="form-control" ng-required="true" />
         </fieldset>
-        <fieldset class="form-group col-md-6" ng-repeat="field in fields">
+        <fieldset class="form-group col-md-6" ng-repeat="field in userFields track by $index">
             <div id="player" class="form-group" ng-model="user.shotSettings.players">
                 <label for="player{{$index + 1}}">Spelare {{$index + 1}}</label>
-                <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn" ng-model="user.shotSettings.players.player.firstname[$index +1]"/>
-                <input class="form-control" {{$index +1}} type="text" placeholder="Efternamn"ng-model="user.shotSettings.players.player.lastname[$index +1]"/>
+                <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn" ng-required="true" ng-model="user.shotSettings.players.player[field].firstname" />
+                <input class="form-control" {{$index + 1}} type="text" placeholder="Efternamn" ng-required="true" ng-model="user.shotSettings.players.player[field].lastname" />
             </div>
         </fieldset>
 
         <div class="col-md-12">
 
-            <button type="submit" ng-click="receiveUser()" class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
+            <button type="submit" ng-click="saveTemporaryUserSettings()" ng-hr class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
             @Html.ActionLink("Nu kör vi!", "Index", null, new { @class = "btn btn-default" })
         </div>
     </form>

@@ -7,12 +7,6 @@ namespace Contracts.Models.User
 {
     public class User
     {
-        public User(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-
-        }
 
         public int Id { get; set; }
         public string FirstName { get; set; }

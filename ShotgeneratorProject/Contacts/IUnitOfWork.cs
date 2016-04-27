@@ -1,10 +1,15 @@
 ﻿using Contracts.Models.User;
 using System;
+using System.Collections.Generic;
+
 namespace Contracts
 {
     public interface IUnitOfWork : IDisposable
     {
-        IGenericRepository<User> UserRepository { get; }
-        void Save();
+        User GetUserById(int userId);
+        void InsertUser(int userId);
+        void UpdateUser(User user);
+    
+
     }
 }

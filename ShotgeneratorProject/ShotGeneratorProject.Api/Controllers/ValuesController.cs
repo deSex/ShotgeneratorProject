@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Handlers;
 using Contracts;
+using Contracts.Models.User;
+using DataLayer;
 using ShotGeneratorProject.Api.Models;
 using System;
 using System.Collections.Generic;
@@ -10,42 +12,30 @@ using System.Web.Http;
 
 namespace ShotGeneratorProject.Api.Controllers
 {
-    [Route("api/generator")]
+    //[Route("api/values")]
     public class ValuesController : ApiController
     {
-        private readonly UserHandler _userHandler;
-        // GET api/values
+        private IUnitOfWork _iUnitOfWork;
 
-        public ValuesController()
-        {
-
-        }
         public ValuesController(IUnitOfWork unitOfWork)
         {
-            _userHandler = new UserHandler(unitOfWork);
+            this._iUnitOfWork = unitOfWork;
         }
-
-        public IEnumerable<string> Get()
+        public ValuesController()
         {
-            return new string[] { "value1", "value2" };
+            this._iUnitOfWork = new UserRepository(new DataContext());
         }
+   
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
         public void Post([FromBody]string value)
         {
         }
-        [Route("getuserid/{userId:int}")]
-        public IEnumerable<string> GetUserId(int id)
+        [HttpGet]
+        [Route("api/values/users/{id:int}")]
+        public IHttpActionResult GetUserId(int id)
         {
-            return new string[] { "value1", "value2" };
-            //var userId = _userHandler.GetUserById(id);
-            //return Ok();
+
+            return Ok(_iUnitOfWork.GetUserById(id));
         }
 
         // PUT api/values/5

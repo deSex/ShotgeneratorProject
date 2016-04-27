@@ -5,7 +5,7 @@
 
         return {
             getUserId: function (userId) {
-                return $http.get("api.shotgenerator/api/generator/getuserid/" + userId);
+                return $http.get("api.shotgenerator/api/generator/user/" + userId);
             }
         };
     }]);

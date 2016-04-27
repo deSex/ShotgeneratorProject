@@ -1,19 +1,21 @@
 ﻿angular.module('generator')
 .controller('generatorOptionsController', ['$scope', 'generatorFactory', function ($scope, generatorFactory) {
-    $scope.numOfPlayers = 0;
+
+
+    $scope.numberOfPlayers = 0;
     $scope.user = {};
     console.log('inne i generatorOptionsController');
-    $scope.$watch('numOfPlayers', function (newValue) {
-        $scope.fields = [];
+    $scope.$watch('playerQuantity', function (userInput) {
+        $scope.userFields = [];
         $scope.players = [];
-        for (var i = 0; i < newValue; i++) {
-         
-            if (newValue > 30) {
+        for (var i = 0; i < userInput; i++) {
 
-                $scope.field.push(30);
+            console.log(userInput);
+            if (i >= 30) {
+                return;
             }
             else {
-                $scope.fields.push(i);
+                $scope.userFields.push(userInput);
             }
         }
     });
@@ -21,8 +23,10 @@
 
     $scope.receiveUser = function () {
         console.log($scope.user);
-        //generatorFactory.getUserId(1).success(function (result) {
-        //    $scope.testValue = result;
+        
+        var temporaryUserInformation = $scope.user;
+     
+
     };
 
 
