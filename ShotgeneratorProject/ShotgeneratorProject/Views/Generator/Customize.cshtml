@@ -6,7 +6,7 @@
     <form>
         <fieldset class="form-group col-md-6">
             <label for="exampleInputEmail1">Användarnamn</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" ng-required="true"  ng-model="user.username" placeholder="Användarnamn">
+            <input type="text" class="form-control" id="exampleInputEmail1" ng-required="true" ng-model="user.username" placeholder="Användarnamn">
         </fieldset>
         <fieldset class="form-group col-md-6">
             <label for="exampleInputPassword1">Lösenord</label>
@@ -26,7 +26,7 @@
                 <option>30 min</option>
                 <option>40 min</option>
                 <option>50 min</option>
-                <option>1 timme</option>
+                <option>60 min</option>
             </select>
         </fieldset>
         <div class="row">
@@ -57,17 +57,16 @@
             <input ng-model="playerQuantity" type="number" class="form-control" ng-required="true" />
         </fieldset>
         <fieldset class="form-group col-md-6" ng-repeat="field in userFields track by $index">
-            <div id="player" class="form-group" ng-model="user.shotSettings.players">
+            <div id="player" class="form-group">
                 <label for="player{{$index + 1}}">Spelare {{$index + 1}}</label>
-                <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn" ng-required="true" ng-model="user.shotSettings.players.player[field].firstname" />
-                <input class="form-control" {{$index + 1}} type="text" placeholder="Efternamn" ng-required="true" ng-model="user.shotSettings.players.player[field].lastname" />
+                <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn" ng-required="true" ng-model="user.shotSettings.players.player[$index].firstname" />
+                <input class="form-control" {{$index + 1}} type="text" placeholder="Efternamn" ng-required="true" ng-model="user.shotSettings.players.player[$index].lastname" />
+
             </div>
         </fieldset>
 
         <div class="col-md-12">
-
             <button type="submit" ng-click="saveTemporaryUserSettings()" ng-hr class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
-            @Html.ActionLink("Nu kör vi!", "Index", null, new { @class = "btn btn-default" })
         </div>
     </form>
 </div>

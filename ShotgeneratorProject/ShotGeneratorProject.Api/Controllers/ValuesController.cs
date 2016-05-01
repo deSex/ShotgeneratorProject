@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Handlers;
 using Contracts;
+using Contracts.Models.TemporaryUser;
 using Contracts.Models.User;
 using DataLayer;
 using ShotGeneratorProject.Api.Models;
@@ -25,11 +26,18 @@ namespace ShotGeneratorProject.Api.Controllers
         {
             this._iUnitOfWork = new UserRepository(new DataContext());
         }
-   
+        Product[] products = new Product[]
+       {
+            new Product { Id = 1, Name = "Tomato Soup", Category = "Groceries", Price = 1 },
+            new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
+            new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
+       };
 
-        public void Post([FromBody]string value)
+        public IEnumerable<Product> GetAllProducts()
         {
+            return products;
         }
+
         [HttpGet]
         [Route("api/values/users/{id:int}")]
         public IHttpActionResult GetUserId(int id)
@@ -38,6 +46,14 @@ namespace ShotGeneratorProject.Api.Controllers
             return Ok(_iUnitOfWork.GetUserById(id));
         }
 
+        [HttpPost]
+        [Route("api/values/users/")]
+        public IHttpActionResult Post([FromBody]TemporaryUser temporaryUser)
+        {
+            //_iUnitOfWork.AddTemporaryUser(temporaryUser);
+            return Ok(temporaryUser);
+
+        }
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
         {

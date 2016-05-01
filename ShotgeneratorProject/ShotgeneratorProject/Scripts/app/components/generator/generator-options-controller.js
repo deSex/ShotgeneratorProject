@@ -10,7 +10,7 @@
         $scope.players = [];
         for (var i = 0; i < userInput; i++) {
 
-            console.log(userInput);
+
             if (i >= 30) {
                 return;
             }
@@ -20,13 +20,18 @@
         }
     });
 
-
-    $scope.receiveUser = function () {
+    $scope.saveTemporaryUserSettings = function () {
         console.log($scope.user);
-        
-        var temporaryUserInformation = $scope.user;
-     
 
+        var temporaryUserInformation = $scope.user;
+        generatorFactory.saveGeneratorSettings(temporaryUserInformation)
+        .then(function (response) {
+            $scope.status = 'Saved user';
+
+        }, function (error) {
+            $scope.status = 'Unable to save user..' + error.message;
+        });
+        console.log($scope.status);
     };
 
 
