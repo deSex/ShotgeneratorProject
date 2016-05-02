@@ -1,4 +1,5 @@
-﻿using Contracts.Models.User;
+﻿using Contracts.Models.TemporaryUser;
+using Contracts.Models.User;
 using System;
 using System.Collections.Generic;
 
@@ -9,6 +10,7 @@ namespace Contracts
         User GetUserById(int userId);
         void InsertUser(int userId);
         void UpdateUser(User user);
+        void AddTemporaryUser(TemporaryUser user);
     
 
     }

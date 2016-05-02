@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts.Models.User;
 using DataLayer;
+using Contracts.Models.TemporaryUser;
 
 namespace BusinessLayer.Handlers
 {
@@ -33,10 +34,7 @@ namespace BusinessLayer.Handlers
         {
             context.SaveChanges();
         }
-        public void UpdateUser(User user)
-        {
-
-        }
+       
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {
@@ -61,5 +59,16 @@ namespace BusinessLayer.Handlers
             DisposeAndCleanUpGC();
         }
 
+        public void UpdateUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddTemporaryUser(TemporaryUser user)
+        {
+            context.TemporaryUser.Add(user);
+            context.SaveChanges();
+            
+        }
     }
 }

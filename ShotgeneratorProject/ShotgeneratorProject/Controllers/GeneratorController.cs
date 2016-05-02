@@ -9,7 +9,7 @@ namespace ShotgeneratorProject.Controllers
     public class GeneratorController : Controller
     {
       
-        public ActionResult Generator()
+        public ActionResult Customize()
         {
             return View();
         }

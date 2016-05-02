@@ -451,7 +451,7 @@
     <Content Include="bower_components\angular\bower.json" />
     <Content Include="bower_components\angular\package.json" />
     <Content Include="bower_components\angular\README.md" />
-    <Content Include="Views\Generator\Generator.cshtml" />
+    <Content Include="Views\Generator\Customize.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Generator\Index.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />
