@@ -2,6 +2,7 @@
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using System.Web.Http.Cors;
+using Newtonsoft.Json.Serialization;
 
 namespace ShotGeneratorProject.Api
 {
@@ -16,6 +17,7 @@ namespace ShotGeneratorProject.Api
             config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

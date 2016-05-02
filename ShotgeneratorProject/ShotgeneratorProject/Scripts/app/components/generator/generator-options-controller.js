@@ -21,12 +21,11 @@
     });
 
 
-    $scope.receiveUser = function () {
+    $scope.saveTemporaryUserSettings = function () {
         console.log($scope.user);
-        
-        var temporaryUserInformation = $scope.user;
-     
+        var temporaryUserInformation = $scope.user; // rename user here as temporaryUser (in view)
 
+        generatorFactory.saveTemporaryUser(temporaryUserInformation);
     };
 
 

@@ -25,7 +25,7 @@ namespace ShotGeneratorProject.Api.Controllers
         {
             this._iUnitOfWork = new UserRepository(new DataContext());
         }
-   
+
 
         public void Post([FromBody]string value)
         {
@@ -38,6 +38,12 @@ namespace ShotGeneratorProject.Api.Controllers
             return Ok(_iUnitOfWork.GetUserById(id));
         }
 
+        [HttpPost]
+        [Route("api/values/users/save/{id:int}")]
+        public IHttpActionResult SaveTemporaryUser(int id)
+        {
+            return Ok(_iUnitOfWork.GetUserById(id));
+        }
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
         {

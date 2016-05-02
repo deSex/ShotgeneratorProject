@@ -4,8 +4,8 @@
 
 
         return {
-            getUserId: function (userId) {
-                return $http.get("api.shotgenerator/api/generator/user/" + userId);
+            saveTemporaryUser: function (temporaryUser) {
+                return $http.get("api.shotgenerator/api/values/user/save" + temporaryUser);
             }
         };
     }]);
