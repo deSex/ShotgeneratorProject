@@ -6,15 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Contracts.Models.User;
 using DataLayer;
-using Contracts.Models.TemporaryUser;
+using Contracts.Models.UserSettings;
 
 namespace BusinessLayer.Handlers
 {
-    public class UserRepository : IUnitOfWork, IDisposable
+    public class GeneratorRepository : IUnitOfWork, IDisposable
     {
         private DataContext context;
 
-        public UserRepository(DataContext context)
+        public GeneratorRepository(DataContext context)
         {
             this.context = context;
         }
@@ -34,7 +34,7 @@ namespace BusinessLayer.Handlers
         {
             context.SaveChanges();
         }
-       
+
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {
@@ -48,15 +48,15 @@ namespace BusinessLayer.Handlers
             this.disposed = true;
         }
 
-        protected virtual void DisposeAndCleanUpGC()
+        protected virtual void CleanUpGC()
         {
-            Dispose(true);
             GC.SuppressFinalize(this);
         }
 
         public void Dispose()
         {
-            DisposeAndCleanUpGC();
+            Dispose(true);
+            CleanUpGC();
         }
 
         public void UpdateUser(User user)
@@ -64,11 +64,18 @@ namespace BusinessLayer.Handlers
             throw new NotImplementedException();
         }
 
-        public void AddTemporaryUser(TemporaryUser user)
+        public void AddGeneratorSettings(UserSettings userSettings)
         {
-            context.TemporaryUser.Add(user);
+        
+            context.UserSettings.Add(userSettings);
             context.SaveChanges();
-            
+
+        }
+
+        public void SaveUser(User user)
+        {
+            context.User.Add(user);
+            context.SaveChanges();
         }
     }
 }

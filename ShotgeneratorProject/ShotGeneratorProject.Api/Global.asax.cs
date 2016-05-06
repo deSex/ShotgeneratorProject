@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using Contacts.Models.Viewmodels;
+using Contracts.Models.UserSettings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +21,9 @@ namespace ShotGeneratorProject.Api
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            IocConfig.Configure();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserSettings, UserViewModel>());
+            config.AssertConfigurationIsValid();
         }
     }
 }

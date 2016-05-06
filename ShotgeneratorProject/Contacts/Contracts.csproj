@@ -42,8 +42,9 @@
   <ItemGroup>
     <Compile Include="IGenericRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Models\TemporaryUser.cs" />
+    <Compile Include="Models\UserSettings.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Viewmodels\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

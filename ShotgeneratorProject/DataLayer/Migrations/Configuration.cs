@@ -13,18 +13,13 @@ namespace DataLayer.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
+            
         }
 
         protected override void Seed(DataLayer.DataContext context)
         {
-            IList<User> Users = new List<User>();
-
-                
-
-            foreach (var user in Users)
-            {
-                context.User.Add(user);
-            }
+           
             base.Seed(context);
         }
     }

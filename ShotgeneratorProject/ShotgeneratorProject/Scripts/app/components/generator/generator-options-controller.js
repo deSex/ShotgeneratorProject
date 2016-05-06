@@ -9,8 +9,6 @@
         $scope.userFields = [];
         $scope.players = [];
         for (var i = 0; i < userInput; i++) {
-
-
             if (i >= 30) {
                 return;
             }
@@ -20,18 +18,18 @@
         }
     });
 
-    $scope.saveTemporaryUserSettings = function () {
+    $scope.saveUserSettings = function () {
         console.log($scope.user);
 
-        var temporaryUserInformation = $scope.user;
-        generatorFactory.saveGeneratorSettings(temporaryUserInformation)
-        .then(function (response) {
-            $scope.status = 'Saved user';
+        var userSettings = $scope.user;
+        //generatorFactory.saveUserSettings(userSettings)
+        //.then(function (response) {
+        //    $scope.status = 'Saved user';
 
-        }, function (error) {
-            $scope.status = 'Unable to save user..' + error.message;
-        });
-        console.log($scope.status);
+        //}, function (error) {
+        //    $scope.status = 'Unable to save user..' + error.message;
+        //});
+      
     };
 
 
