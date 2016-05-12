@@ -6,30 +6,33 @@
     $scope.user = {};
     console.log('inne i generatorOptionsController');
     $scope.$watch('playerQuantity', function (userInput) {
-        $scope.userFields = [];
         $scope.players = [];
+
         for (var i = 0; i < userInput; i++) {
-            if (i >= 30) {
+            if (i >= 30) { 
                 return;
             }
             else {
-                $scope.userFields.push(userInput);
+                var player = { firstName: "", lastName: "" }
+                $scope.players.push(player);
             }
         }
     });
 
     $scope.saveUserSettings = function () {
         console.log($scope.user);
+        $scope.user.userSettings.players = $scope.players;
+        var userSettingsList = $scope.user;
 
-        var userSettings = $scope.user;
-        //generatorFactory.saveUserSettings(userSettings)
-        //.then(function (response) {
-        //    $scope.status = 'Saved user';
+        generatorFactory.saveUserSettings(userSettingsList)
+        .then(function (response) {
+            $scope.status = 'Saved user';
+            window.location = "http://shotgeneratorn.local/Generator/Index";
 
-        //}, function (error) {
-        //    $scope.status = 'Unable to save user..' + error.message;
-        //});
-      
+        }).catch(function (error) {
+            $scope.status = 'Unable to save user..' + error.message;
+        });
+
     };
 
 

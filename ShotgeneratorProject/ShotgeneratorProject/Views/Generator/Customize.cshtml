@@ -19,20 +19,20 @@
                 <fieldset class="form-group col-md-6">
 
                     <label for="exampleSelect1">Intervall</label>
-                    <select class="form-control" id="exampleSelect1" ng-model="user.usersettings.interval">
-                        <option>10 min</option>
-                        <option>20 min</option>
-                        <option>30 min</option>
-                        <option>40 min</option>
-                        <option>50 min</option>
-                        <option>60 min</option>
+                    <select class="form-control" id="exampleSelect1" ng-model="user.userSettings.interval">
+                        <option value="10">10 min</option>
+                        <option value="20">20 min</option>
+                        <option value="30">30 min</option>
+                        <option value="40">40 min</option>
+                        <option value="50">50 min</option>
+                        <option value="60">60 min</option>
                     </select>
                 </fieldset>
-                <label for="mode-option-1">Läge</label>
-                <fieldset class="form-group">
+                @*<label for="mode-option-1">Läge</label>*@
+                @*<fieldset class="form-group">
                     <div class="radio" ng-required="true">
                         <label>
-                            <input type="radio" name="optionsRadios" id="mode-option-1" value="1" checked ng-model="user.usersettings.mode">
+                            <input type="radio" name="optionsRadios" id="mode-option-1" value="softmode" checked ng-model="user.usersettings.mode">
                             Hardcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
                         </label>
                         <label>
@@ -44,7 +44,7 @@
                             Fast Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
                         </label>
                     </div>
-                </fieldset>
+                </fieldset>*@
             </div>
         </div>
 
@@ -56,11 +56,11 @@
                 <label for="exampleSelect1">Antal spelare</label>
                 <input ng-model="playerQuantity" type="number" class="form-control" ng-required="true" />
             </fieldset>
-            <fieldset class="form-group col-md-6" ng-repeat="field in userFields track by $index">
+            <fieldset class="form-group col-md-6" ng-repeat="player in players track by $index">
                 <div id="player" class="form-group">
                     <label for="player{{$index + 1}}">Spelare {{$index + 1}}</label>
-                    <input class="form-control" {{$index + 1}} type="text" placeholder="Förnamn" ng-required="true" ng-model="user.usersettings.players[$index].firstname" />
-                    <input class="form-control" {{$index + 1}} type="text" placeholder="Efternamn" ng-required="true" ng-model="user.usersettings.players[$index].lastname" />
+                    <input class="form-control" type="text" placeholder="Förnamn" ng-required="true" ng-model="players[$index].firstName" />
+                    <input class="form-control" type="text" placeholder="Efternamn" ng-required="true" ng-model="players[$index].lastName" />
 
                 </div>
             </fieldset>

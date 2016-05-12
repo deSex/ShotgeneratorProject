@@ -22,8 +22,8 @@ namespace ShotGeneratorProject.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             IocConfig.Configure();
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserSettings, UserViewModel>());
-            config.AssertConfigurationIsValid();
+            //var config = new MapperConfiguration(cfg => cfg.CreateMap<UserSettings, UserViewModel>());
+            //config.AssertConfigurationIsValid();
         }
     }
 }

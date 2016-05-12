@@ -33,36 +33,21 @@ namespace ShotGeneratorProject.Api.Controllers
             return products;
         }
 
-
         [HttpPost]
         [Route("api/generator/usersettings/")]
-        public IHttpActionResult Post(UserSettings settings)
+        public IHttpActionResult Post(UserViewModel userSettingsList)
         {
-
-            if (settings == null)
+                     
+            if (userSettingsList == null)
             {
                 return BadRequest("Generator is null");
             }
+            var user = Helper.GeneratorHelper.doStuff(userSettingsList);
+            _iUnitOfWork.SaveUser(user);
+          
+            return Ok(userSettingsList);
 
-            _iUnitOfWork.AddGeneratorSettings(settings);
-            return Ok(settings);
-
-        }
-        [HttpPost]
-        [Route("api/generator/user/")]
-        public IHttpActionResult Post(UserViewModel model)
-        {
-
-            if (model == null)
-            {
-                return BadRequest("User is null");
-            }
-           
-            //_iUnitOfWork.UpdateUser(user);
-            return Ok(model);
-
-        }
-        // PUT api/values/5
+        }      
         public void Put(int id, [FromBody]string value)
         {
         }

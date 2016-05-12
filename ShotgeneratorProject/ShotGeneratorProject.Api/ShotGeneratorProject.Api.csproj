@@ -231,6 +231,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\GeneratorHelper.cs" />
     <Compile Include="Migrations\201605040748145_Migration.cs" />
     <Compile Include="Migrations\201605040748145_Migration.Designer.cs">
       <DependentUpon>201605040748145_Migration.cs</DependentUpon>

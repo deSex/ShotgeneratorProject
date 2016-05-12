@@ -4,8 +4,8 @@
         var urlBase = '/api/values';
 
         return {
-            saveUserSettings: function (userSettings) {
-                return $http.post('http://api.shotgenerator/api/generator/usersettings', userSettings);
+            saveUserSettings: function (userSettingsList) {
+                return $http.post('http://api.shotgenerator/api/generator/usersettings', userSettingsList);
             }
         };
     }]);

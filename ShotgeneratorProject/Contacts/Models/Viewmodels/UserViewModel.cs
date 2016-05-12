@@ -11,8 +11,7 @@ namespace Contacts.Models.Viewmodels
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Interval { get; set; }
-        public string Mode { get; set; }    
-        public ICollection<Players> Players { get; set; }
+        public UserSettings UserSettings { get; set; }
+       
     }
 }
