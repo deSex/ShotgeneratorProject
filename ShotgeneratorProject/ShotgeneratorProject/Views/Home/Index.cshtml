@@ -1,14 +1,31 @@
 ﻿<div class="center-block text-center start-teaser">
     <img class="logo" />
-    <div class="col-md-12 col-xs-12">
+    <div class="col-md-8 col-md-offset-4 col-xs-12 center-block" ng-controller="generatorOptionsController">
 
 
         <h1>Shotgeneratorn</h1>
         @*<a href="#">Registrera dig här för mer innehåll</a>
             <a href="#">eller kör igång utan att registrera dig!</a>*@
 
+        <form class="form-signin" _lpchecked="1">
+            <h2 class="form-signin-heading">Registrera dig</h2>
+            <label for="inputEmail" class="sr-only">Emailadress</label>
+            <input type="email" id="inputEmail" ng-model="user.email" class="form-control" placeholder="Emailaddress" required="" autofocus="" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" ng-model="user.password" class="form-control" placeholder="Lösenord" required="" autocomplete="off" style="cursor: pointer; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputConfirmPassword" ng-model="user.confirmPassword" class="form-control" placeholder="Lösenord igen" required="" autocomplete="off" style="cursor: pointer; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Kom ihåg mig
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" ng-click="saveUserSettings()" type="submit">Då kör vi!</button>
+        </form>
         <div class="button-layout">
-
+          
+       
+          
             @Html.ActionLink("Logga in med Facebook", "Index", null, new { @class = "btn btn-default" })
             @Html.ActionLink("eller fortsätt utan registrering", "Customize", "Generator", null, new { @class = "btn btn-default" })
 

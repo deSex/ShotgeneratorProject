@@ -8,7 +8,7 @@ body {
     font-family: 'Sansation_Regular';
     color: white;
     background-image: url("../../static/image/background.jpe");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
 
@@ -23,6 +23,17 @@ body {
         letter-spacing: -5px;
         text-transform: uppercase;
     }
+
+@media only screen and (max-width: 750px) {
+    .start-teaser h1 {
+        font-size: 2em;
+        text-shadow: 2px 2px black;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+}
+
 
 .default-margin-top {
     margin-top: 20px;
@@ -59,7 +70,7 @@ body {
 }
 
 .user-stats {
-    margin:150px 0;
+    margin: 150px 0;
 }
 
 
@@ -74,8 +85,8 @@ body {
     .form-area {
         padding-bottom: 2em;
     }
-    .user-stats {
-    margin:75px 0;
-}
 
+    .user-stats {
+        margin: 75px 0;
+    }
 }

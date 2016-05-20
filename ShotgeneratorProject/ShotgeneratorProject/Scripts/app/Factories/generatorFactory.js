@@ -5,7 +5,7 @@
 
         return {
             saveUserSettings: function (userSettingsList) {
-                return $http.post('http://api.shotgenerator/api/generator/usersettings', userSettingsList);
+                return $http.post('http://api.shotgenerator/api/account/register', userSettingsList);
             }
         };
     }]);

@@ -6,6 +6,8 @@ using Newtonsoft.Json.Serialization;
 using AutoMapper;
 using Contracts.Models.UserSettings;
 using Contacts.Models.Viewmodels;
+using System.Linq;
+using System.Net.Http.Formatting;
 
 namespace ShotGeneratorProject.Api
 {
@@ -29,6 +31,8 @@ namespace ShotGeneratorProject.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

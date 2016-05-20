@@ -13,13 +13,13 @@ namespace ShotGeneratorProject.Api.Helper
         {
             User user = new User
             {
-                FirstName = updatedUser.Username,
+                Username = updatedUser.Email,
                 Password = updatedUser.Password,
                 CreatedDate = DateTime.Now,
                 UpdatedDate = DateTime.Now,
-                UserSettings = updatedUser.UserSettings,
+                //UserSettings = updatedUser.UserSettings,
             };
-            user.UserSettings.Players = updatedUser.UserSettings.Players;
+          // user.UserSettings.Players = updatedUser.UserSettings.Players;
           
             return user;
         }

@@ -21,13 +21,13 @@
 
     $scope.saveUserSettings = function () {
         console.log($scope.user);
-        $scope.user.userSettings.players = $scope.players;
+        //$scope.user.userSettings.players = $scope.players;
         var userSettingsList = $scope.user;
 
         generatorFactory.saveUserSettings(userSettingsList)
         .then(function (response) {
             $scope.status = 'Saved user';
-            window.location = "http://shotgeneratorn.local/Generator/Index";
+            window.location = "http://shotgeneratorn.local/Generator/Customize";
 
         }).catch(function (error) {
             $scope.status = 'Unable to save user..' + error.message;

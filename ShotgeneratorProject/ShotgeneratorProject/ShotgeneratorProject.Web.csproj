@@ -293,6 +293,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\app.routes.js" />
+    <Content Include="Scripts\app\components\generator\generator-controller.js" />
     <Content Include="Scripts\app\components\generator\generator-options-controller.js" />
     <Content Include="Scripts\app\Factories\generatorFactory.js" />
     <Content Include="Scripts\app\shared\routing\query-params.js" />
@@ -308,6 +309,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\GeneratorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SigninController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -459,6 +461,7 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\Controllers\" />
     <Folder Include="Scripts\app\Directives\" />
+    <Folder Include="Views\Signin\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\angular-ui-router\api\angular-ui-router.d.ts" />

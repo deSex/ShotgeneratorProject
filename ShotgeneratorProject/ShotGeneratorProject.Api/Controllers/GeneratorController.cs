@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ShotGeneratorProject.Api.Controllers
 {
@@ -21,30 +23,23 @@ namespace ShotGeneratorProject.Api.Controllers
         {
             this._iUnitOfWork = unitOfWork;
         }
-        Product[] products = new Product[]
-       {
-            new Product { Id = 1, Name = "Tomato Soup", Category = "Groceries", Price = 1 },
-            new Product { Id = 2, Name = "Yo-yo", Category = "Toys", Price = 3.75M },
-            new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
-       };
-        [HttpPost]
-        public IEnumerable<Product> GetAllProducts()
-        {
-            return products;
-        }
 
-        [HttpPost]
-        [Route("api/generator/usersettings/")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Mvc.AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        [System.Web.Http.Route("api/generator/usersettings/")]
         public IHttpActionResult Post(UserViewModel userSettingsList)
         {
-                     
-            if (userSettingsList == null)
+
+            if (!ModelState.IsValid || userSettingsList == null)
             {
                 return BadRequest("Generator is null");
             }
+                   
             var user = Helper.GeneratorHelper.doStuff(userSettingsList);
             _iUnitOfWork.SaveUser(user);
-          
+        
+
             return Ok(userSettingsList);
 
         }      
