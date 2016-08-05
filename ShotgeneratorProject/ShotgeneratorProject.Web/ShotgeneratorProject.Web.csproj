@@ -174,19 +174,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
-    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.min.js" />
-    <Content Include="bower_components\angular-ui-router\src\common.js" />
-    <Content Include="bower_components\angular-ui-router\src\resolve.js" />
-    <Content Include="bower_components\angular-ui-router\src\state.js" />
-    <Content Include="bower_components\angular-ui-router\src\stateDirectives.js" />
-    <Content Include="bower_components\angular-ui-router\src\stateFilters.js" />
-    <Content Include="bower_components\angular-ui-router\src\templateFactory.js" />
-    <Content Include="bower_components\angular-ui-router\src\urlMatcherFactory.js" />
-    <Content Include="bower_components\angular-ui-router\src\urlRouter.js" />
-    <Content Include="bower_components\angular-ui-router\src\view.js" />
-    <Content Include="bower_components\angular-ui-router\src\viewDirective.js" />
-    <Content Include="bower_components\angular-ui-router\src\viewScroll.js" />
+    <Content Include="bower_components\angular-route\angular-route.js" />
+    <Content Include="bower_components\angular-route\angular-route.min.js" />
+    <Content Include="bower_components\angular-route\index.js" />
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
@@ -358,12 +348,6 @@
     <Content Include="bower.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bower_components\angular-ui-router\.bower.json" />
-    <Content Include="bower_components\angular-ui-router\bower.json" />
-    <Content Include="bower_components\angular-ui-router\CHANGELOG.md" />
-    <Content Include="bower_components\angular-ui-router\CONTRIBUTING.md" />
-    <Content Include="bower_components\angular-ui-router\LICENSE" />
-    <Content Include="bower_components\angular-ui-router\README.md" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular.min.js.gzip" />
     <Content Include="bower_components\angular\angular.min.js.map" />
@@ -484,6 +468,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Generator\Generator.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bower_components\angular-route\.bower.json" />
+    <Content Include="bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="bower_components\angular-route\bower.json" />
+    <Content Include="bower_components\angular-route\LICENSE.md" />
+    <Content Include="bower_components\angular-route\package.json" />
+    <Content Include="bower_components\angular-route\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
