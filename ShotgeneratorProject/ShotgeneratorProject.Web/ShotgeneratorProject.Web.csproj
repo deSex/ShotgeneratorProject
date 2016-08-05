@@ -175,6 +175,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="bower_components\angular-ui-router\src\common.js" />
     <Content Include="bower_components\angular-ui-router\src\resolve.js" />
     <Content Include="bower_components\angular-ui-router\src\state.js" />
@@ -329,7 +331,7 @@
     <Content Include="bower_components\jquery\src\var\toString.js" />
     <Content Include="bower_components\jquery\src\wrap.js" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\app\app.js" />
+    <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -345,8 +347,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\app\controllers\" />
-    <Folder Include="Scripts\app\directives\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -478,9 +479,6 @@
     <Content Include="bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
     <Content Include="bower_components\jquery\README.md" />
     <Content Include="bower_components\jquery\src\.eslintrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Generator\Generator.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
