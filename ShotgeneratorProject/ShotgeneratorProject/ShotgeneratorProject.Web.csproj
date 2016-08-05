@@ -295,9 +295,14 @@
     <Content Include="Scripts\app\app.routes.js" />
     <Content Include="Scripts\app\components\generator\generator-controller.js" />
     <Content Include="Scripts\app\components\generator\generator-options-controller.js" />
-    <Content Include="Scripts\app\Factories\generatorFactory.js" />
+    <Content Include="Scripts\app\components\generator\homecontroller.js" />
+    <Content Include="Scripts\app\components\generator\indexcontroller.js" />
+    <Content Include="Scripts\app\components\generator\loginController.js" />
+    <Content Include="Scripts\app\components\generator\signup-controller.js" />
+    <Content Include="Scripts\app\Factories\api-client.js" />
+    <Content Include="Scripts\app\Factories\authService.js" />
+    <Content Include="Scripts\app\Services\authInterceptorService.js" />
     <Content Include="Scripts\app\shared\routing\query-params.js" />
-    <Content Include="Scripts\app\shared\utils\api-client.js" />
     <Content Include="Static\CSS\shotgenerator.css" />
     <Content Include="Static\Image\background.jpe" />
     <Content Include="Web.config">
@@ -307,9 +312,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Controllers\GeneratorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SigninController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -431,7 +434,7 @@
     <Content Include="Static\Fonts\Sansation_Light.ttf" />
     <Content Include="Static\Fonts\Sansation_Light_Italic.ttf" />
     <Content Include="Static\Fonts\Sansation_Regular.ttf" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\index.cshtml" />
     <Content Include="bower_components\angular-ui-router\.bower.json" />
     <Content Include="bower_components\angular-ui-router\bower.json" />
     <Content Include="bower_components\angular-ui-router\CHANGELOG.md" />
@@ -445,10 +448,13 @@
     <Content Include="bower_components\angular\package.json" />
     <Content Include="bower_components\angular\README.md" />
     <Content Include="Views\Generator\Customize.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Generator\Index.cshtml" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Views\Home\signup.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Home\home.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -461,6 +467,7 @@
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\Controllers\" />
     <Folder Include="Scripts\app\Directives\" />
+    <Folder Include="Scripts\app\shared\utils\" />
     <Folder Include="Views\Signin\" />
   </ItemGroup>
   <ItemGroup>

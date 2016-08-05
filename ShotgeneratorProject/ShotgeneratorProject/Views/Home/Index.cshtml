@@ -1,12 +1,7 @@
 ﻿<div class="center-block text-center start-teaser">
     <img class="logo" />
-    <div class="col-md-8 col-md-offset-4 col-xs-12 center-block" ng-controller="generatorOptionsController">
-
-
+    <div class="col-md-8 col-md-offset-4 col-xs-12 center-block" ng-controller="loginController">
         <h1>Shotgeneratorn</h1>
-        @*<a href="#">Registrera dig här för mer innehåll</a>
-            <a href="#">eller kör igång utan att registrera dig!</a>*@
-
         <form class="form-signin" _lpchecked="1">
             <h2 class="form-signin-heading">Registrera dig</h2>
             <label for="inputEmail" class="sr-only">Emailadress</label>
@@ -23,11 +18,6 @@
             <button class="btn btn-lg btn-primary btn-block" ng-click="saveUserSettings()" type="submit">Då kör vi!</button>
         </form>
         <div class="button-layout">
-          
-       
-          
-            @Html.ActionLink("Logga in med Facebook", "Index", null, new { @class = "btn btn-default" })
-            @Html.ActionLink("eller fortsätt utan registrering", "Customize", "Generator", null, new { @class = "btn btn-default" })
 
         </div>
     </div>

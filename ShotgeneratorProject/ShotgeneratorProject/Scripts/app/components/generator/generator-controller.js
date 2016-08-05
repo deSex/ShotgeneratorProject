@@ -1,7 +1,7 @@
 ﻿angular.module('generator')
-.controller('generatorController', ['$scope', 'generatorFactory'], function($scope,generatorFactory) {
+.controller('generatorController', ['$scope', 'apiClient'], function($scope,apiClient) {
 
-    $scope.getUser = function () {
-        generatorFactory.getCurrentUser
-    }
+    //$scope.getUser = function () {
+    //    apiClient.getCurrentUser
+    //}
 })

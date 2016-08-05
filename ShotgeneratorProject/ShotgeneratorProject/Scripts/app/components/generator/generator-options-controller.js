@@ -1,5 +1,5 @@
 ﻿angular.module('generator')
-.controller('generatorOptionsController', ['$scope', 'generatorFactory', function ($scope, generatorFactory) {
+.controller('generatorOptionsController', ['$scope', 'apiClient', function ($scope, apiClient) {
 
 
     $scope.numberOfPlayers = 0;
@@ -19,21 +19,27 @@
         }
     });
 
-    $scope.saveUserSettings = function () {
-        console.log($scope.user);
-        //$scope.user.userSettings.players = $scope.players;
-        var userSettingsList = $scope.user;
+    $scope.saveGeneratorSettings = function() {
+        var generatorSettings = $scope.generator;
 
-        generatorFactory.saveUserSettings(userSettingsList)
-        .then(function (response) {
-            $scope.status = 'Saved user';
-            window.location = "http://shotgeneratorn.local/Generator/Customize";
+        if (generatorSettings != 'undefined') {
 
-        }).catch(function (error) {
-            $scope.status = 'Unable to save user..' + error.message;
-        });
+                //$scope.user.userSettings.players = $scope.players;
+          
 
-    };
+                apiClient.saveGeneratorSettings(generatorSettings)
+                .then(function (response) {
+                    $scope.status = 'Saved generatorsettings';
+                    window.location = "http://shotgeneratorn.local/Generator/Customize";
+
+                }).catch(function (error) {
+                    $scope.status = 'Unable to save user..' + error.message;
+                });
+
+            
+        }
+    }
+
 
 
 }]);

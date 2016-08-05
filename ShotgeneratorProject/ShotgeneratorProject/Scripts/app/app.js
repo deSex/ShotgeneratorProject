@@ -1,21 +1,29 @@
 ﻿var shotgeneratorApp = angular.module('shotgeneratorApp', [
-	//'shotgeneratorDirectives',
-	//'shotgeneratorServices',
-	//'shotgeneratorFactories',
-    //'shotgeneratorFilters',
-    //'generatorOptionsController',
-    //'generatorFactory',
-    'generator',
+    'ngRoute', 'angular-loading-bar','apiClient'
 ]);
 console.log('inne i shotgeneratorApp');
 
-angular.module('generator', []);
-//var generator = angular.module('testController', []);
-//var shotgeneratorControllers = angular.module('shotgeneratorControllers', []);
-//var generatorOptionsController = angular.module('generatorOptionsController', []);
-//var generatorOptionsFactory = angular.module('generatorFactory', []);
-//var generator = angular.module('generator', []);
-//var shotgeneratorDirectives = angular.module('shotgeneratorDirectives', []);
-//var shotgeneratorServices = angular.module('shotgeneratorServices', []);
-//var shotgeneratorFactories = angular.module('generatorFactory', []);
-//var shotgeneratorFilters = angular.module('shotgeneratorFilters', []);
+
+
+shotgeneratorApp.config(function ($routeProvider) {
+
+    console.log("inne i config");
+    $routeProvider.when("/customize",
+        {
+            controller: "generator-options-controller",
+            templateUrl: "/views/generator/customize.cshtml"
+        });
+
+    $routeProvider.when("/generator",
+        {
+            controller: "generator-controller",
+            templateUrl: "/views/generator/index..cshtml"
+        });
+
+    $routeProvider.otherwise({ redirectTo: "/home" });
+    
+    $httpProvider.interceptors.push('authInterceptorService');
+
+    
+})
+

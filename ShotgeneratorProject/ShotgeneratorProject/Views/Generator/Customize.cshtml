@@ -1,17 +1,6 @@
 ﻿<div class="form-area" ng-controller="generatorOptionsController">
-    <div class="col-md-12">
-        <h1 class="text-center col-xs-12">Admininställningar </h1>
-        <p class="text-center">(för att du ska kunna ändra inställningarna under matchens gång)</p>
-    </div>
-    <form>
-        <fieldset class="form-group col-md-6">
-            <label for="exampleInputEmail1">Användarnamn</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" ng-required="true" ng-model="user.username" placeholder="Användarnamn">
-        </fieldset>
-        <fieldset class="form-group col-md-6">
-            <label for="exampleInputPassword1">Lösenord</label>
-            <input type="password" class="form-control" ng-required="true" id="exampleInputPassword1" ng-model="user.password" placeholder="Lösenord">
-        </fieldset>
+    
+    <form> 
         <div class="row default-margin-top"></div>
         <div class="row">
             <div class="col-md-12">
@@ -19,7 +8,7 @@
                 <fieldset class="form-group col-md-6">
 
                     <label for="exampleSelect1">Intervall</label>
-                    <select class="form-control" id="exampleSelect1" ng-model="user.userSettings.interval">
+                    <select class="form-control" id="exampleSelect1" ng-model="generator.interval">
                         <option value="10">10 min</option>
                         <option value="20">20 min</option>
                         <option value="30">30 min</option>
@@ -27,30 +16,11 @@
                         <option value="50">50 min</option>
                         <option value="60">60 min</option>
                     </select>
-                </fieldset>
-                @*<label for="mode-option-1">Läge</label>*@
-                @*<fieldset class="form-group">
-                    <div class="radio" ng-required="true">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="mode-option-1" value="softmode" checked ng-model="user.usersettings.mode">
-                            Hardcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        </label>
-                        <label>
-                            <input type="radio" name="optionsRadios" id="mode-option-2" value="2" checked ng-model="user.usersettings.mode">
-                            Softcore Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        </label>
-                        <label>
-                            <input type="radio" name="optionsRadios" id="mode-option-3" value="3" checked ng-model="user.usersettings.mode">
-                            Fast Mode <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        </label>
-                    </div>
-                </fieldset>*@
+                </fieldset>              
             </div>
         </div>
 
         <div class="row">
-
-
             <h1 class="text-center">Spelare</h1>
             <fieldset class="form-group col-md-6">
                 <label for="exampleSelect1">Antal spelare</label>
@@ -66,7 +36,7 @@
             </fieldset>
         </div>
         <div class="col-md-12">
-            <button type="submit" ng-click="saveUserSettings()" ng-hr class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
+            <button type="submit" ng-click="saveGeneratorSettings()" ng-hr class="btn btn-primary stack-top text-center center-block">Starta Shotgeneratorn</button>
         </div>
     </form>
 </div>
