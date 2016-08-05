@@ -1,0 +1,17 @@
+{
+  "name": "Shotgeneratorn",
+  "homepage": "https://github.com/deSex/ShotgeneratorProject",
+  "authors": [
+    "(Ludvig Flemmich <ludvig.flemmich@esatto.se)",
+    "(Alexander Helsinghof <alexander.helsinghof@@esatto.se)"
+  ],
+  "description": "A hobby project used for parties",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "angularjs#^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.3.1"
+  }
+}
