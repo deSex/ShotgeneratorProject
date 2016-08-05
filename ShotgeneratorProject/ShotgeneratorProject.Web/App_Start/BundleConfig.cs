@@ -12,12 +12,12 @@ namespace ShotgeneratorProject.Web
                "~/bower_components/angular/angular.js",
                "~/bower_components/angular-route/angular-route.js",
                "~/bower_components/jquery/dist/jquery.js",
-               "~/bower_components/bootstrap/dist/js/bootstrap.js"              
+               "~/bower_components/bootstrap/dist/js/bootstrap.js"
                ).IncludeDirectory("~/scripts/app", "*.js", true));
 
             bundles.Add(new StyleBundle("~/styles/").Include(
-                "~/bower_components/bootstrap/dist/css/bootstrap.css",
-                "~/styles/main.css"
+                "~/styles/main.css",
+                "~/styles/bootstrap.min.css"
                 ));
         }
     }

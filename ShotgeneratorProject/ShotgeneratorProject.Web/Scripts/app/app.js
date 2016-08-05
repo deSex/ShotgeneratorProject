@@ -1,7 +1,11 @@
-﻿var app = angular.module('app', ['ngRoute'])
-.config(function ($routeProvider, $locationProvider) {
+﻿var app = angular.module('app', 'ngRoute']);
+
+console.log("inne i app");
+app.config(function ($routeProvider, $locationProvider) {
+
+    console.log("inne i config");
     $routeProvider
-    .when('generator', {
+    .when('/generator', {
         templateUrl: 'Views/Generator/generator.cshtml'
     })
     .when('home', {

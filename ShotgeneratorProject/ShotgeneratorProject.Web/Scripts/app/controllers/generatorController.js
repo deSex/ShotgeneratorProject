@@ -1,5 +1,4 @@
-﻿
-app.controller('generatorController', function ($scope) {
-    console.log('inne i generatorController');
-    $scope.welcomeMessage = 'Hello';
-})
+﻿angular.module('app')
+    .controller('generatorController', ['$scope', '$http', function ($scope, $http) {
+        $scope.welcomeMessage = "hello";
+    }]);

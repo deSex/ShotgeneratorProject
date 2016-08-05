@@ -333,6 +333,7 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\generatorController.js" />
     <Content Include="Scripts\app\controllers\mainController.js" />
+    <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
